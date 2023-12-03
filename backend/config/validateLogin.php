@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['id'] = $row['cedula'];
         echo "<script>
             alert('BIENVENIDO ". $row['nombre_funcionario'] ."');
-            window.location = '../../index.php';
+            window.location = '../html/radicado.php';
         </script>";
     }else{
         echo "<script>

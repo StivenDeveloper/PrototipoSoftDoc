@@ -22,7 +22,7 @@
                                     <img src="backend/assets/images/logos/Logo-SOFTDOC-vud.png" width="250" alt="Logo">
                                 </a>
                                 <p class="text-center">INGRESO FUNCIONARIOS</p>
-                                <form action="config_index/config/validateLogin.php" method="POST">
+                                <form action="backend/config/validateLogin.php" method="POST">
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Correo</label>
                                         <input type="email" name="correo" class="form-control" id="exampleInputEmail1">
