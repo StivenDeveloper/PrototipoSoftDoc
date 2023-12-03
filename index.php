@@ -44,7 +44,7 @@
 
         <!-- Navbar & Hero Start -->
         <div class="container-xxl position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <nav class="backcolorNavbar navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.php" class="navbar-brand p-0">
                     <!-- <h1 class="m-0">SoftDoc</h1> -->
                     <img src="backend/assets/images/logos/logoSoftDoc.svg" alt="Logo" height='250' wi>
@@ -86,7 +86,7 @@
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
-                        <img class="img-fluid" src="img/about.png">
+                        <img class="img-fluid" src="config_index/img/about.png">
                     </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Sobre nosotros</div>
@@ -330,14 +330,14 @@
         <div class="container-xxl bg-primary my-6 py-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="container">
                 <div class="owl-carousel client-carousel">
-                    <a href="#"><img class="img-fluid" src="img/logo-1.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="img/logo-2.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="img/logo-3.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="img/logo-4.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="img/logo-5.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="img/logo-6.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="img/logo-7.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="img/logo-8.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="config_index/img/logo-1.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="config_index/img/logo-2.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="config_index/img/logo-3.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="config_index/img/logo-4.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="config_index/img/logo-5.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="config_index/img/logo-6.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="config_index/img/logo-7.png" alt=""></a>
+                    <a href="#"><img class="img-fluid" src="config_index/img/logo-8.png" alt=""></a>
                 </div>
             </div>
         </div>
@@ -356,7 +356,7 @@
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="config_index/img/testimonial-1.jpg">
                             <div class="ps-3">
                                 <h6 class="mb-1">Client Name</h6>
                                 <small>Profession</small>
@@ -367,7 +367,7 @@
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="config_index/img/testimonial-2.jpg">
                             <div class="ps-3">
                                 <h6 class="mb-1">Client Name</h6>
                                 <small>Profession</small>
@@ -378,7 +378,7 @@
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="config_index/img/testimonial-3.jpg">
                             <div class="ps-3">
                                 <h6 class="mb-1">Client Name</h6>
                                 <small>Profession</small>
@@ -389,7 +389,7 @@
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="config_index/img/testimonial-4.jpg">
                             <div class="ps-3">
                                 <h6 class="mb-1">Client Name</h6>
                                 <small>Profession</small>
@@ -414,7 +414,7 @@
                         <div class="team-item">
                             <h5>Full Name</h5>
                             <p class="mb-4">Designation</p>
-                            <img class="img-fluid rounded-circle w-100 mb-4" src="img/team-1.jpg" alt="">
+                            <img class="img-fluid rounded-circle w-100 mb-4" src="config_index/img/team-1.jpg" alt="">
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
@@ -426,7 +426,7 @@
                         <div class="team-item">
                             <h5>Full Name</h5>
                             <p class="mb-4">Designation</p>
-                            <img class="img-fluid rounded-circle w-100 mb-4" src="img/team-2.jpg" alt="">
+                            <img class="img-fluid rounded-circle w-100 mb-4" src="config_index/img/team-2.jpg" alt="">
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
@@ -438,7 +438,7 @@
                         <div class="team-item">
                             <h5>Full Name</h5>
                             <p class="mb-4">Designation</p>
-                            <img class="img-fluid rounded-circle w-100 mb-4" src="img/team-3.jpg" alt="">
+                            <img class="img-fluid rounded-circle w-100 mb-4" src="config_index/img/team-3.jpg" alt="">
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
@@ -450,7 +450,7 @@
                         <div class="team-item">
                             <h5>Full Name</h5>
                             <p class="mb-4">Designation</p>
-                            <img class="img-fluid rounded-circle w-100 mb-4" src="img/team-4.jpg" alt="">
+                            <img class="img-fluid rounded-circle w-100 mb-4" src="config_index/img/team-4.jpg" alt="">
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
@@ -545,7 +545,7 @@
     <script src="config_index/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="config_index/js/main.js"></script>
 </body>
 
 </html>

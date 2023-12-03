@@ -5,7 +5,7 @@ use prototipo;
 DROP TABLE IF EXISTS radicacion;
 
 CREATE TABLE radicacion(
-    radicado int primary key auto_increment=100,
+    radicado int primary key AUTO_INCREMENT,
     nombre_remitente varchar(45) not null,
     cedula_remitente varchar(45),
     telefono varchar(35) not null,
@@ -30,3 +30,10 @@ CREATE TABLE funcionario(
     telefono varchar(35) not null,
     direccion varchar(80) not null
 );
+
+ALTER TABLE radicacion AUTO_INCREMENT = 100;
+
+INSERT INTO funcionario (cedula, nombre_funcionario, correo, contrasena, telefono, direccion)
+VALUES
+  (1, 'Juan Pérez', 'juan.perez@example.com', 'contraseña123', '555-1234', 'Calle 123, Ciudad'),
+  (2, 'María González', 'maria.gonzalez@example.com', 'clave456', '555-5678', 'Avenida Principal, Pueblo');

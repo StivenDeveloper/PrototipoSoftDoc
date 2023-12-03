@@ -22,7 +22,7 @@
                                     <img src="backend/assets/images/logos/Logo-SOFTDOC-vud.png" width="250" alt="Logo">
                                 </a>
                                 <p class="text-center">INGRESO FUNCIONARIOS</p>
-                                <form action="" method="POST">
+                                <form action="config_index/config/validateLogin.php" method="POST">
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Correo</label>
                                         <input type="email" name="correo" class="form-control" id="exampleInputEmail1">
@@ -35,7 +35,7 @@
                                         
                                         <a class="text-primary fw-bold" href="./index.html">Forgot Password ?</a>
                                     </div>
-                                    <a href="./index.html" class="btn btn-outline-success m-1 w-100 py-8 fs-4 mb-4 rounded-2">Iniciar sesión</a>
+                                    <button type="submit" class="btn btn-outline-success m-1 w-100 py-8 fs-4 mb-4 rounded-2">Iniciar sesión</button>
                                     <!-- <div class="d-flex align-items-center justify-content-center">
                                         <p class="fs-4 mb-0 fw-bold">New to Modernize?</p>
                                         <a class="text-primary fw-bold ms-2" href="./authentication-register.html">Create an account</a>
