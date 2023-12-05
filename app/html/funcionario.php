@@ -1,8 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION['name']) && !isset($_SESSION['id'])) {
+    header('Location: ../../index.php');
+}
 include_once('../config/conexion.php');
 $query = "SELECT * FROM funcionario";
 $resultado = $conexion->query($query);
-
+include_once('../config/listar_dependencia.php');
 ?>
 
 
@@ -33,10 +37,9 @@ $resultado = $conexion->query($query);
                 <div class="col-lg-12">
                     <div class="card mb-4">
                         <div class="table-responsive p-3">
-                            <h3 class="text-left">REGISTRO DE CORRESPONDENCIA RECIBIDA</h3>
+                            <h3 class="text-left">REGISTRO DE FUNCIONARIOS</h3>
                             <table class="table align-items-center table-flush" id="dataTable">
                                 <thead>
-                                    <td>Tipo documento</td>
                                     <td>Cédula</td>
                                     <td>Nombre</td>
                                     <td>Teléfono</td>
@@ -51,16 +54,20 @@ $resultado = $conexion->query($query);
                                     if ($resultado->num_rows > 0) {
                                         while ($fila = $resultado->fetch_assoc()) {
                                             echo "<tr>";
-                                            echo "<td>" . $fila["tipo_documento"] . "</td>";
-                                            echo "<td>" . $fila["cedula"] . "</td>";
+                                            echo "<td>" . $fila["tipo_documento"] . ' ' . $fila["cedula"] . "</td>";
                                             echo "<td>" . $fila["nombre_funcionario"] . "</td>";
                                             echo "<td>" . $fila["telefono"] . "</td>";
                                             echo "<td>" . $fila["direccion"] . "</td>";
                                             echo "<td>" . $fila["correo"] . "</td>";
-                                            echo "<td>" . obtenerDependenciaPorCodigo($conexion,$fila['id_dependencia']). "</td>";
-                                            echo "<td><a href='../config/op_actualizar_funcionario.php'><i class='ti ti-edit'></i></a></td>";
-                                            echo "<td><a href='../config/op_eliminar_funcionario.php'><i class='ti ti-backspace'></i></a></td>";
+                                            echo "<td>" . obtenerDependenciaPorCodigo($fila['id_dependencia']) . "</td>";
+                                            echo '<td><button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalAct' . $fila['id_funcionario'] . '">Actualizar</button></td>'; ?>
+                                            <div class="modal fade text-black" id="modalAct<?php echo $fila['id_funcionario'] ?>">
+                                                <?php include("modals/actualizar_funcionario.php") ?>
+                                            </div>
+                                    <?php
+                                            echo "<td><a href='../config/op_eliminar_funcionario.php?id=" . $fila["id_funcionario"] . "' onclick='return confirm(\"¿Estás seguro de que deseas eliminar este funcionario?\")'><i class='ti ti-backspace'></i></a></td>";
                                             echo "</tr>";
+                                            echo "<script src='../assets/js/ocultarPass.js'></script>";
                                         }
                                     }
                                     ?>
@@ -71,35 +78,17 @@ $resultado = $conexion->query($query);
                 </div>
                 <!-- funcioario.php visualizar los funcionarios -->
                 <div class="py-6 px-6 text-center">
-                    <p class="mb-0 fs-4">Design and Developed by wei,dir and evert <a href="https://adminmart.com/" target="_blank" class="pe-1 text-primary text-decoration-underline">AdminMart.com</a></p>
+                    <p class="mb-0 fs-4">Diseñado y desarrollado por <a href="https://softDocument.com/" target="_blank" class="pe-1 text-primary text-decoration-underline">SoftDocument.com</a></p>
                 </div>
             </div>
         </div>
     </div>
-    <?php include('modulos/script.php') ?>
-    <!-- <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/js/sidebarmenu.js"></script>
-  <script src="../assets/js/app.min.js"></script>
-  <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
-  <script src="../assets/js/dashboard.js"></script> -->
+    <?php include_once('modulos/script.php') ?>
 </body>
 
+</html>
 
 <?php
-function obtenerDependenciaPorCodigo($conexion, $ID)
-{
-    $query = "SELECT * FROM dependencia WHERE id_dependencia = '$ID'";
-    $resultado = $conexion->query($query);
-
-    if ($resultado->num_rows > 0) {
-        $fila = $resultado->fetch_assoc();
-        return $fila["nombre_dependencia"];
-    } else {
-        return "No se encontró ninguna dependencia con el código especificado.";
-    }
-} 
+// Cerrar la conexión
+$conexion->close();
 ?>
-
-</html>

@@ -33,8 +33,9 @@ CREATE TABLE dependencia(
 DROP TABLE IF EXISTS funcionario;
 
 CREATE TABLE funcionario(
+    id_funcionario int primary key AUTO_INCREMENT,
     tipo_documento varchar(10) not null,
-    cedula int primary key not null,
+    cedula varchar(45)  not null,
     nombre_funcionario varchar(45) not null,
     correo varchar(100) not null,
     contrasena varchar(50) not null,

@@ -17,7 +17,7 @@
                             <i class="fa fa-user-tie text-white"></i>
                         </div>
                         <div class="ms-4">
-                            <h6>Analisis y levantamiento de información</h6>
+                            <h6>Análisis y levantamiento de información</h6>
                             <span>Realizamos y ejecutamos un dibido proceso de levantamiento y análisis de requerimientos.</span>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="ms-4">
                             <h6>Desarrollo del prototipo</h6>
-                            <span>Desarrollo y validación del prototipo para segun las necesidades y su empresa.</span>
+                            <span>Desarrollo y validación del prototipo para según las necesidades de su empresa.</span>
                         </div>
                     </div>
                 </div>

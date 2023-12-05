@@ -64,7 +64,7 @@
                         </a>
                     </div>
                     <div class="p-5">
-                        <h5 class="mb-3">Validación de prototipos de software</h5>
+                        <h5 class="mb-3">Validación de prototipos de software de ventanilla única digital</h5>
                         <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</span>
                     </div>
                 </div>

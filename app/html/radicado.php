@@ -1,8 +1,12 @@
 <?php
-include_once('../config/conexion.php');
+session_start();
+if (!isset($_SESSION['name']) && !isset($_SESSION['id'])) {
+  header('Location: ../../index.php');
+}
+include('../config/conexion.php');
 $query = "SELECT * FROM radicacion";
 $resultado = $conexion->query($query);
-
+include_once('../config/listar_dependencia.php');
 ?>
 
 
@@ -39,8 +43,8 @@ $resultado = $conexion->query($query);
                   <td>Documento</td>
                   <td>Radicado</td>
                   <td>Cédula</td>
+                  <td>Nombre remitente</td>
                   <td>Teléfono</td>
-                  <td>Dirección</td>
                   <td>Correo</td>
                   <td>Fecha Radicado</td>
                   <td>Medio Recepción</td>
@@ -66,7 +70,7 @@ $resultado = $conexion->query($query);
                       echo "<td>" . $fila["fecha_radicado"] . "</td>";
                       echo "<td>" . $fila["medio_recepcion"] . "</td>";
                       echo "<td>" . $fila["asunto"] . "</td>";
-                      echo "<td>" . $fila["dependencia"] . "</td>";
+                      echo "<td>" . obtenerDependenciaPorCodigo($fila["dependencia"]) . "</td>";
                       echo "<td>" . $fila["pais"] . "</td>";
                       echo "<td>" . $fila["departamento"] . "</td>";
                       echo "<td>" . $fila["municipio"] . "</td>";
@@ -87,7 +91,7 @@ $resultado = $conexion->query($query);
         </div>
         <!-- FIN radicados.php visualizar los radicados -->
         <div class="py-6 px-6 text-center">
-          <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank" class="pe-1 text-primary text-decoration-underline">AdminMart.com</a></p>
+          <p class="mb-0 fs-4">Diseñado y desarrollado por <a href="https://softDocument.com/" target="_blank" class="pe-1 text-primary text-decoration-underline">SoftDocument.com</a></p>
         </div>
       </div>
     </div>

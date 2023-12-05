@@ -1,3 +1,9 @@
+<?php session_start(); 
+if(!isset($_SESSION['name'])&& !isset($_SESSION['id'])){
+    header('Location: ../../index.php');
+  
+  }
+?>
 <!doctype html>
 <html lang="en">
 
@@ -85,12 +91,12 @@
                                                 <input type="text" name="asunto" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                                 <div id="emailHelp" class="form-text">Ingrese el asunto.</div>
                                             </div>
-                                            <div class="input-group mb-3">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="inputGroupSelect02">Ingrese la dependendencia compentente.</label>
                                                 <select class="form-select" id="inputGroupSelect02" name="dependencia">
                                                     <option selected>Seleccionar...</option>
                                                     <?php include('../config/select_dependencia.php'); ?>
                                                 </select>
-                                                <label class="input-group-text" for="inputGroupSelect02">Ingrese la dependendencia compentente.</label>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">País</label>
@@ -107,9 +113,10 @@
                                                 <input type="text" name="municipio" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required value="Manizales">
                                                 <div id="emailHelp" class="form-text">Ingrese el municipio.</div>
                                             </div>
-                                            <div class="input-group">
-                                                <input type="file" name="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                                                <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Adjuntar documento</button>
+                                            <label for="documento" class="form-label">Adjuntar documento</label>
+                                            <div class="input-group" id="adjuntarDocumento">
+                                                <input type="file" name="file" class="form-control" id="documento" aria-describedby="inputGroupFileAddon04" aria-label="Upload" re>
+                                                <button class="btn btn-danger" type="button" id="inputGroupFileAddon04" onclick='eliminarAdjunto()'>Eliminar adjunto</button>
                                             </div>
                                             <button type="submit" class="btn btn-primary mt-3">Radicar</button>
                                         </form>
@@ -121,13 +128,13 @@
                 </div>
                 <!-- Fin formulario para crear un radicado-->
                 <div class="py-6 px-6 text-center">
-                    <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank" class="pe-1 text-primary text-decoration-underline">AdminMart.com</a></p>
+                    <p class="mb-0 fs-4">Diseñado y desarrollado por <a href="https://softDocument.com/" target="_blank" class="pe-1 text-primary text-decoration-underline">SoftDocument.com</a></p>
                 </div>
             </div>
         </div>
     </div>
     <?php include('modulos/script.php') ?>
-   
+
 </body>
 
 </html>

@@ -19,3 +19,11 @@
         $('#dataTablekHover').DataTable(); // ID From dataTable with Hover
     });
 </script>
+
+<script>
+    function eliminarAdjunto() {
+        var campoDocumento = document.getElementById('documento');
+        campoDocumento.value = ''; // Borra el valor del campo de archivo
+        // Aquí puedes añadir más lógica si necesitas realizar otras acciones al eliminar el adjunto
+    }
+</script>
