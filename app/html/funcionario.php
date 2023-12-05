@@ -45,8 +45,6 @@ $resultado = $conexion->query($query);
                                     <td>Dependencia</td>
                                     <td>Actualizar</td>
                                     <td>Eliminar</td>
-                                    <td></td>
-
                                 </thead>
                                 <tbody>
                                     <?php
@@ -62,7 +60,6 @@ $resultado = $conexion->query($query);
                                             echo "<td>" . obtenerDependenciaPorCodigo($conexion,$fila['id_dependencia']). "</td>";
                                             echo "<td><a href='../config/op_actualizar_funcionario.php'><i class='ti ti-edit'></i></a></td>";
                                             echo "<td><a href='../config/op_eliminar_funcionario.php'><i class='ti ti-backspace'></i></a></td>";
-                                            echo "<td><i class='ti ti-accessible'></i></td>";
                                             echo "</tr>";
                                         }
                                     }

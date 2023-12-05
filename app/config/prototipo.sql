@@ -15,7 +15,7 @@ CREATE TABLE radicacion(
     fecha_radicado date not null,
     medio_recepcion varchar(45) not null,
     asunto varchar(45) not null,
-    dependecia varchar(50),
+    dependencia varchar(50),
     pais varchar(45) not null,
     departamento varchar(45) not null,
     municipio varchar(45) not null,

@@ -51,29 +51,31 @@ $resultado = $conexion->query($query);
                   <td>Municipio</td>
                   <td>Actualizar</td>
                   <td>Eliminar</td>
-                  <td></td>
-
                 </thead>
                 <tbody>
                   <?php
                   if ($resultado->num_rows > 0) {
                     while ($fila = $resultado->fetch_assoc()) {
                       echo "<tr>";
-                      echo "<td>" . $fila["documento"] . "</td>";
+                      echo '<td><a href="../../' . $fila["documento"] . '" target="_blank">Ver Documento</a></td>';
                       echo "<td>" . $fila["radicado"] . "</td>";
                       echo "<td>" . $fila["cedula_remitente"] . "</td>";
                       echo "<td>" . $fila["nombre_remitente"] . "</td>";
                       echo "<td>" . $fila["telefono"] . "</td>";
                       echo "<td>" . $fila["correo"] . "</td>";
                       echo "<td>" . $fila["fecha_radicado"] . "</td>";
-                      echo "<td>" . $fila["medio_recepción"] . "</td>";
+                      echo "<td>" . $fila["medio_recepcion"] . "</td>";
                       echo "<td>" . $fila["asunto"] . "</td>";
                       echo "<td>" . $fila["dependencia"] . "</td>";
                       echo "<td>" . $fila["pais"] . "</td>";
                       echo "<td>" . $fila["departamento"] . "</td>";
                       echo "<td>" . $fila["municipio"] . "</td>";
-                      echo "<td><a href='../config/op_eliminar_radicado.php?id=" . $fila["radicado"] . "'><i class='bi bi-pencil-square'></i></a></td>";
-                      echo "<td><a href='../config/op_actulizar_radicado.php?id=" . $fila["radicado"] . "'><i class='bi bi-trash-fill'></i></a></td>";
+                      echo '<td><button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalAct' . $fila['radicado'] . '">Actualizar</button></td>'; ?>
+                      <div class="modal fade text-black" id="modalAct<?php echo $fila['radicado'] ?>">
+                        <?php include("modals/actualizar_radicado.php") ?>
+                      </div>
+                  <?php
+                      echo "<td><a href='../config/op_eliminar_radicado.php?id=" . $fila["radicado"] . "' onclick='return confirm(\"¿Estás seguro de que deseas eliminar este registro?\")'><i class='ti ti-backspace'></i></a></td>";
                       echo "</tr>";
                     }
                   }

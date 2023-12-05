@@ -33,7 +33,7 @@
                                             <input type="hidden" name="admin">
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Nombre Remitente</label>
-                                                <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                                <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required">
                                                 <div id="emailHelp" class="form-text">Ingrese el nombre completo del Remitente.</div>
                                             </div>
                                             <div class="mb-3">
@@ -46,8 +46,8 @@
                                                 </select>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Cedula</label>
-                                                <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                                <label for="exampleInputEmail1" class="form-label">Número de Documento</label>
+                                                <input type="number" name="cedula" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                                 <div id="emailHelp" class="form-text">Ingrese la cédula.</div>
                                             </div>
                                             <div class="mb-3">
@@ -94,35 +94,24 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">País</label>
-                                                <input type="text" name="pais" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                                <input type="text" name="pais" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required value="Colombia">
                                                 <div id="emailHelp" class="form-text">Ingrese el Pais.</div>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Departamento</label>
-                                                <input type="text" name="departamento" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                                <input type="text" name="departamento" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required value="Caldas">
                                                 <div id="emailHelp" class="form-text">Ingrese el departemento.</div>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Municipio</label>
-                                                <input type="text" name="municipio" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                                <input type="text" name="municipio" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required value="Manizales">
                                                 <div id="emailHelp" class="form-text">Ingrese el municipio.</div>
                                             </div>
                                             <div class="input-group">
                                                 <input type="file" name="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                                                 <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Adjuntar documento</button>
                                             </div>
-                                            <div class="mb-4">
-                                                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                                                <div class="input-group">
-                                                    <input type="password" name="contrasena" class="form-control" id="exampleInputPassword1" required>
-                                                    <button type="button" id="showPassword" class="btn btn-outline-secondary">Mostrar</button>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3 form-check">
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Radicar</button>
+                                            <button type="submit" class="btn btn-primary mt-3">Radicar</button>
                                         </form>
                                     </div>
                                 </div>
@@ -138,13 +127,7 @@
         </div>
     </div>
     <?php include('modulos/script.php') ?>
-    <!-- <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/js/sidebarmenu.js"></script>
-  <script src="../assets/js/app.min.js"></script>
-  <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
-  <script src="../assets/js/dashboard.js"></script> -->
+   
 </body>
 
 </html>
