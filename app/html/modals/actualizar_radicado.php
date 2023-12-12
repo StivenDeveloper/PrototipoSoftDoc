@@ -6,7 +6,7 @@
         </div>
         <form action="../config/op_actulizar_radicado.php" method="post">
             <div class="modal-body">
-                <input type="hidden" name="radicado" value="<?php echo $fila['radicado'] ?>">
+                <input type="hidden" name="radicado" value="<?php echo $fila['id_radicado'] ?>">
                 <label for="nombre" class="form-label">Actualizar Nombre remitente</label>
                 <input type="text" name="nombre" value="<?php echo $fila['nombre_remitente'] ?>" class="form-control" required>
                 <br>

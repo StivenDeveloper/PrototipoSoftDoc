@@ -15,6 +15,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $pais = $conexion->real_escape_string($_POST['pais']);
     $departamento = $conexion->real_escape_string($_POST['departamento']);
     $municipio = $conexion->real_escape_string($_POST['municipio']);
+
+    //Lógica obtener el último número
+    $nuevo_numero=0;
+    $ultimo_numero = obtenerUltimoNumero($conexion);
+    if($ultimo_numero>999){
+        $nuevo_numero =100;
+    }else{
+        $nuevo_numero = $ultimo_numero + 1;
+    }
+
+    $radicado = generarRadicado($nuevo_numero);
     
     //Verificación del archivo
     if (isset($_FILES["file"]) && $_FILES["file"]["error"] == UPLOAD_ERR_OK) {
@@ -32,6 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     //Creamos la query
     $query = "INSERT INTO radicacion(
+    radicado,
     nombre_remitente,
     tipo_documento,
     cedula_remitente,
@@ -48,6 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     documento
     )
     VALUES(
+        '$radicado',
         '$nombre',
         '$tipo',
         '$cedula',
@@ -78,4 +91,32 @@ if($conexion->query($query)){
 //Cierre de la conexion
 $conexion->close();
 }
+
+function generarRadicado($nuevo){
+    $fecha = date('Y-m-d');
+    return $fecha . ' - ' .$nuevo;
+}
+
+
+function obtenerUltimoNumero($conexion){
+    $query = "SELECT radicado FROM radicacion ORDER BY id_radicado DESC LIMIT 1";
+    $resultado = $conexion->query($query);
+
+    if ($resultado->num_rows > 0) {
+        // Obtener el resultado como arreglo asociativo
+        $row = $resultado->fetch_assoc();
+
+        // Obtener el radicado del resultado
+        $ultimo_radicado = $row['radicado'];
+
+        // Obtener el último número a partir del radicado
+        $partes = explode(" - ", $ultimo_radicado);
+        $ultimo_numero_string = end($partes);
+        
+        // Convertir el número a entero
+        $ultimo_numero = intval($ultimo_numero_string);
+
+        return $ultimo_numero;
+    } 
+};
 ?>

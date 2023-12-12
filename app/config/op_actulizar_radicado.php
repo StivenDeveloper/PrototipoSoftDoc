@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     pais = '$pais',
     departamento = '$departamento',
     municipio = '$municipio'
-    WHERE radicado = '$radicado'";
+    WHERE id_radicado = '$radicado'";
 
 //Inicializamos la query
 if($conexion->query($query)){

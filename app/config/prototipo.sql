@@ -5,7 +5,8 @@ use prototipo;
 DROP TABLE IF EXISTS radicacion;
 
 CREATE TABLE radicacion(
-    radicado int primary key AUTO_INCREMENT,
+    id_radicado int primary key AUTO_INCREMENT,
+    radicado varchar(20) not null,
     nombre_remitente varchar(45) not null,
     tipo_documento varchar(10) not null,
     cedula_remitente varchar(45),
@@ -45,9 +46,15 @@ CREATE TABLE funcionario(
     foreign key(id_dependencia) references dependencia(id_dependencia)
 );
 
+--Inicialización del radicado desde el 99
 
+INSERT INTO radicacion(radicado,nombre_remitente,tipo_documento,cedula_remitente,telefono,direccion,correo,fecha_radicado,medio_recepcion,asunto,dependencia,pais,departamento,municipio,documento
+    )VALUES(
+    '2023-12-11 - 99','Admin','Admin','Admin',
+    'Admin','Admin','Admin@gmail.com','2023-12-11',
+    'Admin','Admin','Admin','Admin','Admin','Admin','Admin'
+);
 
-ALTER TABLE radicacion AUTO_INCREMENT = 100;
 
 INSERT INTO dependencia (id_dependencia, nombre_dependencia, telefono) 
 VALUES

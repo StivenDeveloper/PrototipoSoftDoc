@@ -3,7 +3,7 @@
 include_once ("conexion.php");
 
 //Aquí hago la sentencia SQL
-$query = "DELETE FROM radicacion WHERE radicado =" . $_GET['id'];
+$query = "DELETE FROM radicacion WHERE id_radicado =" . $_GET['id'];
 
 if($conexion->query($query)){
     echo "<script>

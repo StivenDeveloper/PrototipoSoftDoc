@@ -4,7 +4,7 @@ if (!isset($_SESSION['name']) && !isset($_SESSION['id'])) {
   header('Location: ../../index.php');
 }
 include('../config/conexion.php');
-$query = "SELECT * FROM radicacion";
+$query = "SELECT * FROM radicacion WHERE NOT id_radicado=1";
 $resultado = $conexion->query($query);
 include_once('../config/listar_dependencia.php');
 ?>
@@ -74,12 +74,12 @@ include_once('../config/listar_dependencia.php');
                       echo "<td>" . $fila["pais"] . "</td>";
                       echo "<td>" . $fila["departamento"] . "</td>";
                       echo "<td>" . $fila["municipio"] . "</td>";
-                      echo '<td><button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalAct' . $fila['radicado'] . '">Actualizar</button></td>'; ?>
-                      <div class="modal fade text-black" id="modalAct<?php echo $fila['radicado'] ?>">
+                      echo '<td><button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalAct' . $fila['id_radicado'] . '">Actualizar</button></td>'; ?>
+                      <div class="modal fade text-black" id="modalAct<?php echo $fila['id_radicado'] ?>">
                         <?php include("modals/actualizar_radicado.php") ?>
                       </div>
                   <?php
-                      echo "<td><a href='../config/op_eliminar_radicado.php?id=" . $fila["radicado"] . "' onclick='return confirm(\"¿Estás seguro de que deseas eliminar este registro?\")'><i class='ti ti-backspace'></i></a></td>";
+                      echo "<td><a href='../config/op_eliminar_radicado.php?id=" . $fila["id_radicado"] . "' onclick='return confirm(\"¿Estás seguro de que deseas eliminar este registro?\")'><i class='ti ti-backspace'></i></a></td>";
                       echo "</tr>";
                     }
                   }
